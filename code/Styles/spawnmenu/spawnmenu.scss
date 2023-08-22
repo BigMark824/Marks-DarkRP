@@ -16,7 +16,7 @@ spawnmenu {
 	font-family: poppins;
 	opacity: 0;
 	z-index: 10;
-	backdrop-filter: blur( 10px ) contrast( 50% ) saturate( 50% ) brightness( 10% );
+	backdrop-filter: blur( 20px ) contrast( 50% ) saturate( 50% ) brightness(25% );
 
 	.left {
 		flex-grow: 1;
@@ -62,7 +62,7 @@ spawnmenu {
 					font-size: 11px;
 					transition: all 0.2s ease-out;
 					cursor: pointer;
-
+					border-radius: 20%;
 					&:hover {
 						//border-left: 3px solid #3273eb;
 						color: white;
@@ -187,8 +187,9 @@ spawnmenu .sidebar
 
 	button
 	{
+		
 		cursor: pointer;
-		border-radius: 5px;
+		border-radius: 50%;
 		color: white;
 	}
 }
@@ -292,13 +293,14 @@ spawnmenu .sidebar
             width: 100px;
         }
         button {
+			border-radius: 20%;
             pointer-events: all;
             background-color: rgba( black, 0.7 );
             border-radius: 8px;
             margin: 24px 8px 8px 8px;
             padding: 10px;
             &:hover {
-                background-color: rgba(black, 0.9);
+                background-color: rgba(rgba(0, 0, 0, 0.494), 0.9);
                 cursor: pointer;
             }
         }

@@ -19,7 +19,8 @@ spawnmenu .tabs
 		font-family: Poppins;
 		border-bottom: 5px solid transparent;
 		text-transform: lowercase;
-        
+        background-color: rgb(46, 46, 46);
+		border-radius: 20px;
 		//border-radius: 5px;
 		label
 		{
@@ -29,6 +30,7 @@ spawnmenu .tabs
 		&:hover
 		{
 			opacity: 1;
+			background-color: rgb(17, 17, 17);
 		}
 
 		&.active
@@ -39,7 +41,7 @@ spawnmenu .tabs
 			//	background-color: #fff;//( #3273eb, 0.2 );
 			//color: #3273eb;
 
-			border-bottom: 5px solid $blue;
+			border-bottom: 5px solid $Pink;
 		}
 	}
 }

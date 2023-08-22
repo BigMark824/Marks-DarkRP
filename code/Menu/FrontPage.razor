@@ -9,28 +9,33 @@
 <root style="flex-direction: column;">
 
     <div class="game-title">
-        @Game.Menu.Package.Title
+        <b>@Game.Menu.Package.Title</b>
+       
     </div>
 
     <div class="controls">
+        @if (Game.InGame)
 
-        @if ( Game.InGame )
         {
             <a class="button" href="/active">Current Game</a>
             <a class="button" onclick=@LeaveGame>Leave Game</a>
             <span style="height: 20px;"></span>
         }
-        else
-        {
-            <a class="button" onclick=@CreateNewLobby>Create Game</a>
 
-            if (Game.Menu.Package.SupportsSavedGames && Game.Menu.SavedGames.Any() )
+        else
+
+        {
+            <a class="button" onclick=@CreateNewLobby>Create Server</a>
+
+            if (Game.Menu.Package.SupportsSavedGames && Game.Menu.SavedGames.Any())
+
             {
                 <a class="button" onclick=@LoadSavedGame>Load Game</a>
             }
+
         }
 
-        <a class="button" onclick="@OpenServerList">Find a Game</a>
+        <a class="button" onclick="@OpenServerList">Find a Server</a>
         <a class="button" href="/settings">Settings</a>
 
         <span style="height: 20px;"></span>
@@ -38,60 +43,112 @@
         <a class="button" @onclick=@Game.Menu.Close>Quit</a>
 
     </div>
-
+    <div class="ChangeLogs">
+        
+        <div class="game-title">Change Logs - AEST</div>
+        <h1>Small PSA - More updates are very anticipated!</h1>
+        <h1>08/20/2023 2:39PM - Getting Prepared for more networking and scoreboard - minor UI</h1>
+        <h1>08/17/2023 8:29PM - Started on a networked ui and scoreboard</h1>
+        <h1>08/16/2023 8:29PM - Added this darn change log</h1>
+        <h1>08/16/2023 8:25PM - Fixed MP5 spawning on default job</h1>
+        <h1>08/16/2023 7:00PM - Updated UI and made look more consistent</h1>
+        <h1>08/14/2023 0:00PM - Minor UI Update</h1>
+        
+    </div>
+    
 </root>
-
 @code
+
 {
     void LoadSavedGame()
+
     {
-        this.Navigate( "/load" );
+
+        this.Navigate("/load");
+
     }
+
+
 
     void LeaveGame()
+
     {
+
         Game.Menu.LeaveServer("Leaving");
+
     }
-    
+
+
+
     async Task CreateNewLobby()
+
     {
+
         var lobby = await Game.Menu.CreateLobbyAsync(64, "game", true);
-        lobby.Title = $"{Game.Menu.Package.Title} Server";
-        lobby.Description = ":)";
-        lobby.Map = "facepunch.construct";
+
+        lobby.Title = $"DarkRP Server";
+
+        lobby.Description = "A generic DarkRP server! Add stuff!";
+
+        lobby.Map = "markindustries.testrp";
+
     }
+
+
 
     void OpenServerList()
+
     {
+
         var options = new Sandbox.Modals.ServerListModalOptions();
+
         options.TargetGame = Game.Menu.Package.FullIdent;
+
         options.OnSelected = (server) =>
+
         {
+
             Game.Menu.ConnectToServer(server.SteamId);
+
         };
 
+
+
         Game.Overlay.ShowServerList(options);
+
     }
+  
+
 }
 
 <style>
-.gamemainmenu frontpage
-{
-	margin: 100px 100px;
-	gap: 100px;
+    .gamemainmenu frontpage {
+        margin: 100px 100px;
+        gap: 50;
 
-	.game-title
-	{
-		font-family: Poppins;
-		font-weight: 700;
-		font-size: 70px;
-	}
+        .game-title {
 
-	.controls
-	{
-		flex-direction: column;
-		gap: 8px;
-		align-items: flex-start;
-	}
-}
+            font-weight: 700;
+            font-size: 90px;
+        }
+
+        .controls {
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-start;
+
+        }
+
+        .ChangeLogs {
+            flex-direction: column;
+            gap: 4px;
+
+            align-items: flex-start;
+        }
+
+        .img {
+
+
+        }
+    }
 </style>

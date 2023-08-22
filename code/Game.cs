@@ -2,9 +2,12 @@ using System.Threading.Tasks;
 using Sandbox;
 using System;
 using System.Linq;
+using Sandbox.UI;
 
 partial class SandboxGame : GameManager
 {
+	
+
 	private SandboxHud _sandboxHud;
 
 	[Event.Hotload]
@@ -21,6 +24,7 @@ partial class SandboxGame : GameManager
 			Log.Info( "[Server] initting HUD" );
 			// Create the HUD
 			_sandboxHud = new SandboxHud();
+			
 		}
 
 		ReloadManager.ReloadAutoload();

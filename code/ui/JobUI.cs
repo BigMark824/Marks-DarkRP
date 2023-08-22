@@ -3,6 +3,7 @@ using Sandbox;
 using Sandbox.UI;
 using Sandbox.UI.Construct;
 using System.Timers;
+
 public enum jobType {
 citizen = 0,
 thief = 1,
@@ -13,15 +14,16 @@ ganglead = 5,
 police = 6,
 
 }
-public partial class Health : Panel
+
+public partial class JobUI : Panel
 {
 	public Label Label;
 
 	public static string Job = "Pick Job";
 	public static int Money = 0;
-	public Health()
+	public JobUI()
 	{
-		Label = Add.Label( "Health", "value" );
+		Label = Add.Label( "Job", "value" );
 
 	}
 
@@ -30,7 +32,7 @@ public partial class Health : Panel
 		var player = Game.LocalPawn;
 		if ( player == null ) return;
 
-		Label.Text = $"HP: {player.Health.CeilToInt()} | Job: {Job} | ${Money}";
+		Label.Text = $"Job: {Job} | ${Money}";
 
 
 	}
@@ -40,21 +42,17 @@ public partial class Health : Panel
 		Log.Info( $"Hello I am {Job}" );
 	}
 	[ClientRpc]
-	public static void SendJob(jobType recieveJob, long steamId)
+	public static void SendJob(jobType recieveJob)
 	{
-		if (Game.LocalClient.SteamId  == steamId) 
-		{
 			Log.Info(recieveJob.ToString());
-		}
-	
-		
+
 	}
 	[ConCmd.Server( "ServerSetJob" )]
-	public static void ServerSetJob(jobType serverJob, long steamId)
+	public static void ServerSetJob(jobType serverJob)
 	{
-		SendJob(serverJob, steamId);
+		SendJob(To.Single(ConsoleSystem.Caller), serverJob);
 		Log.Error($"{ConsoleSystem.Caller} has switched job to " + serverJob.ToString());
-
+		
 	}
 }
 

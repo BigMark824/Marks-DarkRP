@@ -47,7 +47,7 @@
             }
 
             <FormGroup>
-                <Label>Description</Label>
+                <Label class="Text">Description</Label>
                 <Control>
                     <TextEntry Value:bind=@Game.Menu.Lobby.Description Tooltip="Server Description"> </TextEntry>
                 </Control>
@@ -197,4 +197,5 @@
     {
         Game.Menu.Lobby.ConVars = Game.Menu.Lobby.ConVars.SetItem(key, value);
     }
+
 }

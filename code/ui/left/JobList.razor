@@ -4,9 +4,8 @@
 @using Sandbox;
 @using Sandbox.UI;
 @inherits Panel;
-
 <root class="spawnpage columned">
-
+	
 	<div class="nav">
 
 		<div class="section">
@@ -47,6 +46,7 @@
 
 @code
 {
+
 		[ConCmd.Server( "suicide" )]
 	static void DoPlayerSuicide()
 	{
@@ -85,54 +85,56 @@
 		var player = ConsoleSystem.Caller.Pawn as SandboxPlayer;
 
 		player.Inventory.Add( new Pistol(), true  );
+		
+		
 		//player.Inventory.Add( new ArrestBaton(), true  );
 	}
 	void Thief()
 	{
 		
-		Health.Job = "Thief";
-		ConsoleSystem.Run( "ServerSetJob 1  " + Game.LocalClient);
+		JobUI.Job = "Thief";
+		ConsoleSystem.Run( "ServerSetJob 1  "  );
 	}
 	void Citizen()
 	{
-		ConsoleSystem.Run( "ServerSetJob 0  " + Game.LocalClient);
+		ConsoleSystem.Run( "ServerSetJob 0  "  );
 		removecontra();
-		Health.Job = "Citizen";
+		JobUI.Job = "Citizen";
 		citizen();
 	}
 	void GunDealer()
 	{
-		Health.Job = "Gun Dealer";
-		ConsoleSystem.Run( "ServerSetJob 2  " + Game.LocalClient);
+		JobUI.Job = "Gun Dealer";
+		ConsoleSystem.Run( "ServerSetJob 2  "  );
 	}
 	void Hobo()
 	{
-		Health.Job = "Hobo";
-		ConsoleSystem.Run( "ServerSetJob 3  " + Game.LocalClient);
+		JobUI.Job = "Hobo";
+		ConsoleSystem.Run( "ServerSetJob 3  "  );
 	}
 	void Hitman()
 	{
-		Health.Job = "Hitman";
-		ConsoleSystem.Run( "ServerSetJob 4  " + Game.LocalClient);
+		JobUI.Job = "Hitman";
+		ConsoleSystem.Run( "ServerSetJob 4  "  );
 	}
 	void GangLeader()
 	{
 		
-		ConsoleSystem.Run( "ServerSetJob 5  " + Game.LocalClient);
-		Health.Job = "Gang Leader";
+		ConsoleSystem.Run( "ServerSetJob 5  "  );
+		JobUI.Job = "Gang Leader";
 		citizen();
 		gang();
 		
 	}
-		void Police()
+void Police()
 	{
 		
 		
-		Health.Job = "Police Officer";
-		ConsoleSystem.Run( "ServerSetJob 6  " + Game.LocalClient);
+		JobUI.Job = "Police Officer";
+		ConsoleSystem.Run( "ServerSetJob 6 ");
 
 		citizen();
 		police();
 		
 	}
-}
+} 

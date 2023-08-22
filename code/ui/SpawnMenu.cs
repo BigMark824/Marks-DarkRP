@@ -47,6 +47,9 @@ public partial class SpawnMenu : Panel
 				tabs.AddButtonActive( "Jobs", ( b ) => joblist.SetClass( "active", b ) );
 				var shipmentlist = body.AddChild<ShipmentsList>();
 				tabs.AddButtonActive( "Shipments", ( b ) => shipmentlist.SetClass( "active", b ) );
+				var drpentslist = body.AddChild<DRPEntsList>();
+				tabs.AddButtonActive( "RP Entities", ( b ) => drpentslist.SetClass( "active", b ) );
+				
 			}
 		}
 
