@@ -19,7 +19,7 @@ public partial class SandboxHud : HudEntity<RootPanel>
 	{
 
 		RootPanel.StyleSheet.Load( "/Styles/sandbox.scss" );
-
+		RootPanel.AddChild<MOTD>();
 		RootPanel.AddChild<Chat>();
 		RootPanel.AddChild<VoiceList>();
 		RootPanel.AddChild<VoiceSpeaker>();
@@ -31,6 +31,7 @@ public partial class SandboxHud : HudEntity<RootPanel>
 		RootPanel.AddChild<SpawnMenu>();
 		RootPanel.AddChild<Crosshair>();
 		RootPanel.AddChild<JobUI>();
+		
 
 		Event.Run( "sandbox.hud.loaded" );
 	}
