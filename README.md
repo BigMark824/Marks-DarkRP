@@ -23,9 +23,14 @@ https://discord.gg/4taZs3c9Tz
 
 # Credits
 
+
+
+
 Using SandboxPlus by Wirebox - https://asset.party/wiremod/sandboxplus
 
 And most importantly Falco the original creator of DarkRP!
 https://gmod.fandom.com/wiki/DarkRP
 https://github.com/FPtje
 https://steamcommunity.com/id/FPtje
+
+Thank you to wildwestcs for rewriting my job scripts :D
