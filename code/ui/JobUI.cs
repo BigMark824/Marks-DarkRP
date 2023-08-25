@@ -20,7 +20,6 @@ public partial class JobUI : Panel
 	public Label Label;
 
 	public static string Job = "Pick Job";
-	public static int Money = 0;
 	public JobUI()
 	{
 		Label = Add.Label( "Job", "value" );
@@ -32,7 +31,7 @@ public partial class JobUI : Panel
 		var player = Game.LocalPawn;
 		if ( player == null ) return;
 
-		Label.Text = $"Job: {Job} | ${Money}";
+		Label.Text = $"Job: {Job} | ${MoneySystem.MoneyAmount}";
 
 
 	}

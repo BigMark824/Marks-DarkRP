@@ -64,6 +64,7 @@
 		[ConCmd.Server( "citizen" )]
 	public static void citizen()
 	{
+		
 		var player = ConsoleSystem.Caller.Pawn as SandboxPlayer;
 
 		player.Inventory.Add( new PhysGun(), true );
@@ -71,6 +72,7 @@
 		player.Inventory.Add( new Tool() );
 		player.Inventory.Add( new Flashlight() );
 		player.Inventory.Add( new Fists() );
+
 	}
 	[ConCmd.Server( "gang" )]
 	public static void gang()
@@ -137,4 +139,5 @@ void Police()
 		police();
 		
 	}
+	
 } 

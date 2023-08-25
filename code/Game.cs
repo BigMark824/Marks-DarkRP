@@ -6,8 +6,6 @@ using Sandbox.UI;
 
 partial class SandboxGame : GameManager
 {
-	
-
 	private SandboxHud _sandboxHud;
 
 	[Event.Hotload]
@@ -18,6 +16,8 @@ partial class SandboxGame : GameManager
 
 	public SandboxGame()
 	{
+		
+
 		Log.Info( "Init SandboxPlus" );
 		if ( Game.IsServer )
 		{
@@ -282,4 +282,7 @@ partial class SandboxGame : GameManager
 
 		return true;
 	}
-}
+	
+
+	}
+

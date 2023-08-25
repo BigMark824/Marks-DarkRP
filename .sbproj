@@ -316,6 +316,11 @@
           "Name": "Noclip",
           "KeyboardCode": "N",
           "GroupName": "Movement"
+        },
+        {
+          "Name": "FadingToolKey",
+          "KeyboardCode": "-",
+          "GroupName": "Other"
         }
       ]
     },
