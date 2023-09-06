@@ -39,16 +39,23 @@
 		{
 			font-size: 20px;
 			padding: 10px 50px;
-			background-color: rgb(255, 0, 230);
+			background-color: rgb(198, 0, 224);
+			border: 2px solid rgb(80, 0, 90);
 			color: #ffffff;
 			font-weight: bold;
-			border-radius: 25px;
+			border-radius: 15px;
 			cursor: pointer;
 
 			&:hover
 			{
-				background-color: #888;
+				background-color: rgb(166, 0, 188);
 			}
+			&:active {
+				left: 2px;
+				top: 3px;
+				background-color: rgb(166, 0, 188);
+				color: rgb(255, 255, 255);
+			  }
 		}
 	}
 

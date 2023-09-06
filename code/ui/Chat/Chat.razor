@@ -95,7 +95,13 @@
 			e.PlayerId = playerId;
 
 		e.Message = message;
-		e.Name = $"{name}";
+		e.Name = $"{name} | Global";
+			if ( message.Contains( "//") || message.Contains( "/ooc") || message.Contains( "/OOC")){
+				e.Name = $"{name} | OOC";
+			}
+			if ( message.Contains( "/ad")){
+				e.Name = $"{name} | Advertisement";
+			}
 
 		e.SetClass( "noname", string.IsNullOrEmpty( name ) );
 		e.SetClass( "info", isInfo );

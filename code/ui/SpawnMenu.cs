@@ -1,5 +1,6 @@
 ﻿using Sandbox;
 using Sandbox.Tools;
+
 using Sandbox.UI;
 using Sandbox.UI.Construct;
 using System.Linq;
@@ -51,7 +52,8 @@ public partial class SpawnMenu : Panel
 				tabs.AddButtonActive( "Shipments", ( b ) => shipmentlist.SetClass( "active", b ) );
 				var drpentslist = body.AddChild<DRPEntsList>();
 				tabs.AddButtonActive( "RP Entities", ( b ) => drpentslist.SetClass( "active", b ) );
-				
+				var customcrosshairslist = body.AddChild<CrosshairCustom>();
+				tabs.AddButtonActive( "Crosshair", ( b ) => customcrosshairslist.SetClass( "active", b ) );
 			}
 		}
 

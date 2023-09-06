@@ -53,8 +53,6 @@
 		player.Inventory.DeleteContents();
 	}
 
-	[ConCmd.Server( "setJob" )]
-	public static void setJob(string jobId)
 	{
 		var player = ConsoleSystem.Caller.Pawn as SandboxPlayer;
 
@@ -67,4 +65,5 @@
 
 		setJob(jobId);
 	}
+	
 } 

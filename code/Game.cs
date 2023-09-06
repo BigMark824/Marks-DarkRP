@@ -6,8 +6,6 @@ using Sandbox.UI;
 
 partial class RPGame : GameManager
 {
-	
-
 	private SandboxHud _sandboxHud;
 	public static JobSystem jobSystem = new JobSystem();
 
@@ -19,6 +17,8 @@ partial class RPGame : GameManager
 
 	public RPGame()
 	{
+		
+
 		Log.Info( "Init SandboxPlus" );
 		if ( Game.IsServer )
 		{
@@ -68,7 +68,7 @@ partial class RPGame : GameManager
 		var player = new SandboxPlayer( cl, jobSystem );
 
 		cl.Pawn = player;
-
+		
 		player.Respawn();
 	}
 
@@ -308,4 +308,7 @@ partial class RPGame : GameManager
 
 		return true;
 	}
-}
+	
+
+	}
+

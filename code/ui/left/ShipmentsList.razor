@@ -1,5 +1,6 @@
 ﻿@using System.Threading.Tasks;
 @using System.Collections.Generic;
+@using System.ComponentModel.DataAnnotations
 @using Sandbox;
 @using Sandbox.UI;
 @inherits Panel;
@@ -13,6 +14,7 @@
 		</div>
 
 		<div class="section grow">
+			<button @OnClick="@Pistol1">Pistol x1</button>
 		</div>
 
 		<div class="section">
@@ -32,5 +34,11 @@
 
 @code
 {
-
+	private string Model => "models/citizen_props/crate01.vmdl";
+    
+	void Pistol1()
+	{
+	    ModelEntity model = new ModelEntity( "models/citizen/citizen.vmdl" );
+	    model.Position = new Vector3( 0, 0, 100 );
+	}
 }

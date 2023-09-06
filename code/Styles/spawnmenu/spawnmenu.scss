@@ -189,7 +189,7 @@ spawnmenu .sidebar
 	{
 		
 		cursor: pointer;
-		border-radius: 50%;
+		border-radius: 10%;
 		color: white;
 	}
 }
@@ -218,16 +218,18 @@ spawnmenu .sidebar
 
         .icon {
             border-radius: 16px;
-            color: rgba( #fff, 0.5 );
+            color: rgba( #ffffff, 1 );
             font-size: 12px;
             text-align: center;
+			font-family: poppins;
             cursor: pointer;
-            width: 100%;
-            height: 100%;
+            width: 110%;
+            height: 110%;
             background-position: center;
             background-size: cover;
-            background-color: rgba(black, 0.1);
-            background-image: url( /entity/spawnicon.png );
+            background-color: rgba(#ea00ff, 1);
+			filter: drop-shadow(2px 2px 2px #5c0058);
+           // background-image: url( /entity/spawnicon.png );
 
         }
 
@@ -240,10 +242,11 @@ spawnmenu .sidebar
             text-align: center;
             cursor: pointer;
             width: 100%;
+			text-shadow: 2px 2px 2px black;
             height: 100%;
             background-position: center;
             background-size: cover;
-            background-color: rgba(black, 0.1);
+            
             background-image: none;
 
             label {
@@ -278,6 +281,7 @@ spawnmenu .sidebar
             }
         }
         menutextentry {
+			border-radius: 20%;
             pointer-events: all;
             color: white;
             padding: 10px;
@@ -293,7 +297,7 @@ spawnmenu .sidebar
             width: 100px;
         }
         button {
-			border-radius: 20%;
+			border-radius: 50%;
             pointer-events: all;
             background-color: rgba( black, 0.7 );
             border-radius: 8px;
