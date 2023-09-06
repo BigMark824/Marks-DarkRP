@@ -3,7 +3,17 @@ using Sandbox;
 using Sandbox.UI;
 using Sandbox.UI.Construct;
 using System.Timers;
-using System.Linq;
+
+public enum jobType {
+citizen = 0,
+thief = 1,
+gundealer = 2,
+hobo = 3,
+hitman = 4,
+ganglead = 5,
+police = 6,
+
+}
 
 public partial class JobUI : Panel
 {
@@ -21,35 +31,27 @@ public partial class JobUI : Panel
 		var player = Game.LocalPawn;
 		if ( player == null ) return;
 
-
-
 		Label.Text = $"Job: {Job} | ${MoneySystem.MoneyAmount}";
 
 
 	}
-
 	[ConCmd.Client( "myjob" )]
 	public static void MyJob()
 	{
 		Log.Info( $"Hello I am {Job}" );
 	}
-
 	[ClientRpc]
-	public static void SendJob(Job recieveJob, long steamId)
+	public static void SendJob(jobType recieveJob)
 	{
-		if (Game.LocalClient.SteamId  == steamId) 
-		{
-			Log.Info(recieveJob.id);
-		}
-	
-		
+			Log.Info(recieveJob.ToString());
+
 	}
 	[ConCmd.Server( "ServerSetJob" )]
-	public static void ServerSetJob(Job serverJob, long steamId)
+	public static void ServerSetJob(jobType serverJob)
 	{
-		SendJob(serverJob, steamId);
-		Log.Error($"{ConsoleSystem.Caller} has switched job to " + serverJob.id);
-
+		SendJob(To.Single(ConsoleSystem.Caller), serverJob);
+		Log.Error($"{ConsoleSystem.Caller} has switched job to " + serverJob.ToString());
+		
 	}
 }
 
