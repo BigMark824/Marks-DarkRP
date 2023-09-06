@@ -7,13 +7,11 @@
   "Schema": 1,
   "HasAssets": true,
   "AssetsPath": "",
-  "Resources": "*.vmdl_c.png\nentity/*.png\n*.spawnlist\n",
-  "MenuResources": "/menu/*",
+  "Resources": "*.vmdl_c.png\nentity/*.png\n*.spawnlist\n/*",
+  "MenuResources": "/menu/*\n/ui/*\n/Styles/*\n/*\nStyles/sandbox.scss\nStyles/spawnmenu/*\nStyles/hud/*",
   "HasCode": true,
   "CodePath": "code",
-  "PackageReferences": [
-    "wiremod.wirelib"
-  ],
+  "PackageReferences": [],
   "EditorReferences": null,
   "Metadata": {
     "MapList": [
@@ -24,7 +22,7 @@
     "RankType": "None",
     "MapSelect": "Unrestricted",
     "GameNetworkType": "Multiplayer",
-    "MaxPlayers": 64,
+    "MaxPlayers": 128,
     "MinPlayers": 1,
     "Collision": {
       "Defaults": {
@@ -143,7 +141,10 @@
     "Public": true,
     "ReplaceTags": "sandbox game dynamic spawnmenu physgun",
     "CsProjName": "",
-    "ControlModes": {},
+    "ControlModes": {
+      "Keyboard": true,
+      "VR": true
+    },
     "InputSettings": {
       "Actions": [
         {
@@ -321,6 +322,11 @@
           "Name": "FadingToolKey",
           "KeyboardCode": "-",
           "GroupName": "Other"
+        },
+        {
+          "Name": "OOC",
+          "KeyboardCode": "Y",
+          "GroupName": "Other"
         }
       ]
     },
@@ -337,6 +343,14 @@
         "PreLaunchCommand": "",
         "PostLaunchCommand": ""
       }
-    ]
+    ],
+    "Compiler": {
+      "RootNamespace": "Sandbox",
+      "DefineConstants": "SANDBOX;ADDON;DEBUG",
+      "NoWarn": "1701;1702;1591;",
+      "WarningsAsErrors": "",
+      "References": [],
+      "DistinctReferences": []
+    }
   }
 }

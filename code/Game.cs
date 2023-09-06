@@ -16,7 +16,6 @@ partial class SandboxGame : GameManager
 
 	public SandboxGame()
 	{
-		
 
 		Log.Info( "Init SandboxPlus" );
 		if ( Game.IsServer )

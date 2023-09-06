@@ -95,7 +95,11 @@
 			e.PlayerId = playerId;
 
 		e.Message = message;
-		e.Name = $"{name}";
+		e.Name = $"{name} | Global | {JobUI.Job}";
+			if ( message.Contains( "//") || message.Contains( "/ooc")){
+				e.Name = $"{name} | OOC";
+			}
+		
 
 		e.SetClass( "noname", string.IsNullOrEmpty( name ) );
 		e.SetClass( "info", isInfo );

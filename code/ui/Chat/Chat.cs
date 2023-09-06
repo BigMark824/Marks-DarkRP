@@ -12,6 +12,7 @@ public partial class Chat
 		{
 			Log.Info( $"{name}: {message}" ); 
 		}
+		
 	}
 
 	[ConCmd.Server( "sandbox_say" )]
@@ -25,5 +26,7 @@ public partial class Chat
 
 		Log.Info( $"{ConsoleSystem.Caller}: {message}" );
 		AddChatEntry( To.Everyone, ConsoleSystem.Caller.Name, message, ConsoleSystem.Caller.SteamId );
+
+
 	}
 }
