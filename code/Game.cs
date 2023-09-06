@@ -4,10 +4,9 @@ using System;
 using System.Linq;
 using Sandbox.UI;
 
-partial class RPGame : GameManager
+partial class SandboxGame : GameManager
 {
 	private SandboxHud _sandboxHud;
-	public static JobSystem jobSystem = new JobSystem();
 
 	[Event.Hotload]
 	public void OnReloaded()
@@ -15,7 +14,7 @@ partial class RPGame : GameManager
 		ReloadManager.ReloadAutoload();
 	}
 
-	public RPGame()
+	public SandboxGame()
 	{
 		
 
@@ -25,38 +24,13 @@ partial class RPGame : GameManager
 			Log.Info( "[Server] initting HUD" );
 			// Create the HUD
 			_sandboxHud = new SandboxHud();
-
-			jobSystem.jobs.Add("citizen", new Job()
-			{
-				id = "citizen",
-				model = "models/citizen/citizen.vmdl",
-				giveWeaponsToPlayer = (player) =>
-				{
-					player.Inventory.Add(new Pistol());
-				}	
-			});
-
-			jobSystem.jobs.Add( "policeofficer", new Job()
-			{
-				id = "policeofficer",
-				model = "models/citizen/citizen.vmdl",
-				giveWeaponsToPlayer = ( player ) =>
-				{
-					player.Inventory.Add( new PhysGun(), true );
-					player.Inventory.Add( new GravGun() );
-					player.Inventory.Add( new Tool() );
-					player.Inventory.Add( new Flashlight() );
-					player.Inventory.Add( new Fists() );
-					player.Inventory.Add( new Pistol() );
-					player.Inventory.Add( new MP5() );
-				}
-			} );
+			
 		}
 
 		ReloadManager.ReloadAutoload();
 		Event.Run( "game.init" );
 	}
-	~RPGame()
+	~SandboxGame()
 	{
 		_sandboxHud?.Delete();
 	}
@@ -65,7 +39,7 @@ partial class RPGame : GameManager
 	public override void ClientJoined( IClient cl )
 	{
 		base.ClientJoined( cl );
-		var player = new SandboxPlayer( cl, jobSystem );
+		var player = new SandboxPlayer( cl );
 
 		cl.Pawn = player;
 		
