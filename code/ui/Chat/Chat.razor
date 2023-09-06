@@ -95,12 +95,12 @@
 			e.PlayerId = playerId;
 
 		e.Message = message;
-		e.Name = $"{name} | Global";
+		e.Name = $"{name} | Global | {JobUI.Job}";
 			if ( message.Contains( "//") || message.Contains( "/ooc") || message.Contains( "/OOC")){
-				e.Name = $"{name} | OOC";
+				e.Name = $"{name} | OOC | {JobUI.Job}";
 			}
 			if ( message.Contains( "/ad")){
-				e.Name = $"{name} | Advertisement";
+				e.Name = $"{name} | Advertisement | {JobUI.Job}";
 			}
 
 		e.SetClass( "noname", string.IsNullOrEmpty( name ) );

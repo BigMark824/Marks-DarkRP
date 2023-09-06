@@ -15,7 +15,7 @@ public partial class JobUI : Panel
 		Label = Add.Label( "Job", "value" );
 
 	}
-
+	
 	public override void Tick()
 	{
 		var player = Game.LocalPawn;
