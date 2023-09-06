@@ -8,7 +8,7 @@
   "HasAssets": true,
   "AssetsPath": "",
   "Resources": "*.vmdl_c.png\nentity/*.png\n*.spawnlist\n/*",
-  "MenuResources": "/menu/*\n/ui/*\n/Styles/*\n/*\nStyles/sandbox.scss\nStyles/spawnmenu/*\nStyles/hud/*",
+  "MenuResources": "/menu/*\n/*",
   "HasCode": true,
   "CodePath": "code",
   "PackageReferences": [],
@@ -351,6 +351,9 @@
       "WarningsAsErrors": "",
       "References": [],
       "DistinctReferences": []
-    }
+    },
+    "SavedGames": true,
+    "MapDependentSaves": false,
+    "SaveFormatVersion": 1001
   }
 }

@@ -16,6 +16,7 @@ partial class SandboxGame : GameManager
 
 	public SandboxGame()
 	{
+		
 
 		Log.Info( "Init SandboxPlus" );
 		if ( Game.IsServer )
@@ -41,7 +42,7 @@ partial class SandboxGame : GameManager
 		var player = new SandboxPlayer( cl );
 
 		cl.Pawn = player;
-
+		
 		player.Respawn();
 	}
 
