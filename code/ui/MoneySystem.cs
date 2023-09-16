@@ -16,7 +16,7 @@ public static partial class MoneySystem
     {
         
     }
-    
+
     public async static void Startup()
     {
         await Task.Delay(200);

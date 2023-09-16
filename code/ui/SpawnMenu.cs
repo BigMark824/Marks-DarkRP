@@ -52,6 +52,8 @@ public partial class SpawnMenu : Panel
 				tabs.AddButtonActive( "RP Entities", ( b ) => drpentslist.SetClass( "active", b ) );
 				var customcrosshairslist = body.AddChild<CrosshairCustom>();
 				tabs.AddButtonActive( "Crosshair", ( b ) => customcrosshairslist.SetClass( "active", b ) );
+				var debuglist = body.AddChild<DebugList>();
+				tabs.AddButtonActive( "Debug", ( b ) => debuglist.SetClass( "active", b ) );
 			}
 		}
 

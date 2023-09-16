@@ -24,11 +24,27 @@ partial class SandboxGame : GameManager
 			Log.Info( "[Server] initting HUD" );
 			// Create the HUD
 			_sandboxHud = new SandboxHud();
+		
 			
 		}
 
 		ReloadManager.ReloadAutoload();
+		Game.TickRate = 40;
 		Event.Run( "game.init" );
+		
+		if ( Input.Pressed( "use" ) )
+		{
+
+			TraceResult tr = Trace.Ray( AimRay, 2000 )
+				.WorldOnly()
+				.Run();
+
+	// If we hit, draw a 2 inch sphere for 10 seconds
+				if ( tr.Hit )
+			{
+				DebugOverlay.Sphere( tr.EndPosition, 2.0f, Color.Red, duration: 10.0f );
+			}
+		}
 	}
 	~SandboxGame()
 	{
